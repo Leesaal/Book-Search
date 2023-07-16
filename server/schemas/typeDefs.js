@@ -30,6 +30,14 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
+  input bookInput {
+    bookId: String!
+    description: String!
+    authors: [String]
+    image: String
+    link: String
+    title: String!
+  }
 `;
 
 module.exports = typeDefs;
