@@ -3,6 +3,8 @@
 #### Table of Contents 
 [Description](#description)
 
+[Technologies](#technologies)
+
 [Result](#result)
 
 [Installation](#installation)
@@ -19,6 +21,17 @@
 
 This program is a book search program that allows the users to search for a book, save the books to their login account and remove them if desired.  
 This application was built with MERN stack and uses the Apollo server and graphQL.
+
+## Technologies
+
+- Javascript
+- MongoDB
+- Apollo Server
+- GraphQL
+- React
+- Express
+- NodeJS
+- HTML and CSS
 
 ## Result
 
