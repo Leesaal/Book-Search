@@ -30,7 +30,28 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    saveBook: async(),
+    saveBook: async (parent, { bookData }, context) => {
+      if (context.user) {
+        const updateUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { savedBooks: bookData } },
+          { new: true }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError("You are not logged in!");
+    },
+    removeBook: async (parent, { bookId }, context) => {
+      if (context.user) {
+        const updateUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedBooks: { bookId } } },
+          { new: true }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError("You are not logged in!");
+    },
   },
 };
 
